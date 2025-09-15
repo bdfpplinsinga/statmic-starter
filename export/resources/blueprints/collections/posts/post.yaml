@@ -1,0 +1,55 @@
+title: Posts
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Main
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Excerpt
+              character_limit: 200
+          -
+            handle: image
+            field:
+              mode: grid
+              container: assets
+              max_files: 1
+              display: Image
+              type: assets
+              instructions: 'Will be displayed as featured image on post, and used as post thumbnail.'
+              validate:
+                - required
+      -
+        display: Article
+        fields:
+          -
+            import: article
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: author
+            field:
+              default:
+                - b6a9b415-f635-4cc4-ac18-b20b8ca0eb94
+              type: users
+              display: Author

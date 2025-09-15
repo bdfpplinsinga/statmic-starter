@@ -1,0 +1,21 @@
+{{ $aspectRatio = switch(
+    (aspect_ratio == '1/1') => 'aspect-[1/1]',
+    (aspect_ratio == '16/9') => 'aspect-[16/9]',
+    (aspect_ratio == '21/9') => 'aspect-[21/9]',
+    (aspect_ratio == '4/5') => 'aspect-[4/5]',
+    (aspect_ratio == '2/1') => 'aspect-[2/1]',
+    (aspect_ratio == '3/1') => 'aspect-[3/1]',
+    (aspect_ratio == '4/1') => 'aspect-[4/1]',
+    () => 'aspect-none') 
+}}
+
+{{ partial:sets/block }}
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <figure class="{{ $aspectRatio }} w-full">
+            {{partial:components/picture class="w-full rounded-2xl" cover="true"}}
+            {{ if caption }}
+                <figcaption class="mt-4 text-sm text-gray-500">{{ caption }}</figcaption>
+            {{ /if }}
+        </figure>
+    </div>
+{{ /partial:sets/block }}

@@ -1,0 +1,13 @@
+{{ partial:sets/block }}
+  <div class="mx-auto max-w-2xl text-center">
+    {{if subtitle}}
+      <x-paragraph color="primary" weight="semibold">{{ subtitle }}</x-paragraph>
+    {{/if}}
+    {{if title}}
+      <x-heading size="xl" class="tracking-tight">{{ title }}</x-heading>
+    {{/if}}
+    {{if description}}
+      <x-paragraph as="div" class="mt-8">{{ description }}</x-paragraph>
+    {{/if}}
+  </div>
+{{ /partial:sets/block }}

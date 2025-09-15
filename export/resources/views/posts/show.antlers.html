@@ -1,0 +1,16 @@
+{{article}}
+
+
+    {{ if type == "text" }}
+        <div class="mx-auto max-w-4xl px-6 lg:px-8 my-6 sm:my-6">
+            <x-richtext class="prose max-w-none" color="dark">{{ content }}</x-richtext>
+        </div>
+    {{ elseif type == "buttons" }}
+        <div class="mx-auto max-w-4xl px-6 lg:px-8 my-6 sm:my-6">
+            {{ partial:components/buttons class="mt-0 md:mt-0" }}
+        </div> 
+    {{ else }}
+        {{ partial src="sets/{type}/{version}" article="true" }}
+    {{ /if }}
+
+{{/article}}

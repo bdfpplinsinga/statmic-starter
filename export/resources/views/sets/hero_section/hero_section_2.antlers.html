@@ -1,0 +1,32 @@
+{{ partial:sets/block class="bg-gray-900 my-0 md:my-0" }}
+  <div class="relative isolate overflow-hidden pt-14">
+    {{partial:components/picture :image="hero_image" class="absolute inset-0 -z-10 size-full opacity-30" alt="Hero Section 2 Image" cover="true" focus="center"}}
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        {{if notification}}
+        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+          <x-small-notification variant="secondary"> 
+              {{notification:text}}
+              {{if notification:link_url}}
+                  <a href="{{notification:link_url}}" class="font-semibold text-indigo-600 inline-flex items-center gap-1">
+                      {{notification:link_text}}
+                      <span aria-hidden="true">
+                          {{ svg src="16/solid/arrow-long-right" class="size-4 fill-current" }}
+                      </span>
+                  </a>
+              {{/if}}
+          </x-small-notification>
+        </div>
+        {{/if}}
+        
+        <div class="text-center">
+          <x-heading size="xl" color="white">{{ title }}</x-heading>
+          <x-paragraph as="div" class="mt-8" size="xl" weight="medium" color="white">{{ rich_text }}</x-paragraph>
+          {{if buttons}}
+            {{ partial:components/buttons class="justify-center" }} 
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+{{ /partial:sets/block }}

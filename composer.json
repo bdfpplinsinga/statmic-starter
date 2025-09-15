@@ -1,0 +1,9 @@
+{
+    "name": "bdfpplinsinga/systamic-starter",
+    "extra": {
+        "statamic": {
+            "name": "Systamic Starter",
+            "description": "Custom Starterkit by Buro Toast"
+        }
+    }
+}

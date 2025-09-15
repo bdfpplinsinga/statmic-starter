@@ -1,0 +1,19 @@
+{{ partial:sets/block }}
+    <div class="mx-auto max-w-7xl md:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-12 lg:grid-cols-2 lg:items-start">
+            <div class="px-6 lg:px-0">
+                {{partial:components/picture class="w-full rounded-2xl" cover="true"}}
+            </div>
+            <div class="px-6 lg:px-0 lg:pt-4 lg:pl-4">
+                <div class="mx-auto  lg:mx-0 lg:max-w-lg">
+                    <x-heading class="text-base/7" color="secondary">{{title}}</x-heading>
+                    <x-heading as="p" size="lg" color="dark">{{subtitle}}</x-heading>
+                    <x-paragraph as="div" class="mt-6">{{rich_text}}</x-paragraph>
+                    {{if buttons}}
+                        {{ partial:components/buttons  }} 
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{ /partial:sets/block }}

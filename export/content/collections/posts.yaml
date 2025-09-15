@@ -1,0 +1,7 @@
+title: Posts
+template: posts/show
+revisions: false
+route: "posts/{slug}"
+date_behavior:
+  past: public
+  future: private

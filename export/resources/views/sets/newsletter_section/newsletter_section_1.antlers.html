@@ -1,0 +1,34 @@
+<div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+      <div class="max-w-xl lg:max-w-lg">
+        <x-heading as="p" color="white" size="xxs" weight="normal" class="opacity-80">Dont miss anything</x-heading>
+        <x-heading color="white" size="md" class="tracking-tight">Subscribe to our newsletter</x-heading>
+        <x-paragraph class="mt-6" color="light-gray">The latest news, articles, and resources,
+          sent to your inbox weekly.</x-paragraph>
+        <div class="mt-6 flex max-w-md gap-x-2">
+            <x-input id="email" name="email" type="email" placeholder="Enter your email" color="dark" />
+            <x-button class="h-full py-2" variant="white">Subscribe</x-button>
+        </div>
+      </div>
+      <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+        <div class="flex flex-col items-start">
+          <div class="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+            {{ svg src="24/outline/calendar" class="size-6 text-white" }}  
+          </div>
+          <x-paragraph as="dt" class="mt-4" color="white" weight="semibold">Weekly articles</x-paragraph>
+          <x-paragraph as="dd" class="mt-2" color="light-gray">Non laboris consequat cupidatat laborum magna. Eiusmod non irure
+            cupidatat duis commodo amet.</x-paragraph>
+        </div>
+        <div class="flex flex-col items-start">
+          <div class="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+             {{ svg src="24/outline/hand-raised" class="size-6 text-white" }}
+          </div>
+          <x-paragraph as="dt" class="mt-4" color="white" weight="semibold">No spam</x-paragraph>
+          <x-paragraph as="dd" class="mt-2" color="light-gray">Officia excepteur ullamco ut sint duis proident non adipisicing.
+            Voluptate incididunt anim.</x-paragraph>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>

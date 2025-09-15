@@ -1,0 +1,21 @@
+{{ $columns = switch(
+    (columns == '2') => 'grid grid-cols-1 sm:grid-cols-2',
+    (columns == '3') => 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3',
+    (columns == '4') => 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4',
+    () => 'grid-cols-1') 
+}}
+
+{{ partial:sets/block }}
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 grid gap-6 {{ $columns }}">
+        {{ images }}
+        <figure class="w-full">
+            {{partial:components/picture :image='url' class="w-full rounded-2xl" cover="true"}}
+            {{ if caption }}
+                <figcaption class="mt-4 text-sm text-gray-500">{{ caption }}</figcaption>
+            {{ /if }}
+        </figure>
+        {{ /images }}
+    </div>
+
+{{ /partial:sets/block }}

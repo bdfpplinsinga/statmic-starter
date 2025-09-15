@@ -1,0 +1,17 @@
+{{ partial:sets/block }}
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-20 px-6 lg:px-8 xl:grid-cols-3">
+    <div class="max-w-2xl ">
+      <x-heading class="tracking-tight" weight="semibold" size="lg">{{ title }}</x-heading>
+      {{if description}}
+          <x-paragraph as="div" class="mt-6" size="lg" color="gray">{{ description }}</x-paragraph>
+      {{/if}}
+    </div>
+    <ul role="list" class="divide-y divide-gray-200 xl:col-span-2">
+      {{ members }}
+      <li class="flex flex-col gap-10 py-12 first:pt-0 last:pb-0 sm:flex-row">
+        {{ partial:components/team_card }}
+      </li>
+      {{ /members }}
+    </ul>
+  </div>
+{{ /partial:sets/block }}

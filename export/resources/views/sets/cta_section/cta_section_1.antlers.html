@@ -1,0 +1,17 @@
+{{ partial:sets/block }}
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+        <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+          <x-heading class="tracking-tight text-balance" size="md" color="white">{{ title }}</x-heading>
+          <x-paragraph as="div" class="mt-6" size="lg" color="light">{{ rich_text }}</x-paragraph>
+          {{if buttons}}
+            {{ partial:components/buttons  }} 
+          {{/if}}
+        </div>
+        <div class="relative mt-16 h-80 lg:mt-8">
+          {{partial:components/picture :image="image" class="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10" alt="App screenshot" width="{{image.width}}" height="{{image.height}}"}}
+        </div>
+      </div>
+    </div>
+{{ /partial:sets/block }}
+  

@@ -1,0 +1,32 @@
+{{ partial:sets/block }}
+<div class="mx-auto max-w-7xl px-6 lg:px-8">
+  <div class="mx-auto max-w-2xl lg:text-center">
+    <x-heading class="text-base/7" color="secondary">{{title}}</x-heading>
+    <x-heading as="p" size="lg" color="dark">{{subtitle}}</x-heading>
+    <x-paragraph as="div" class="mt-6" size="lg" color="gray">{{description}}</x-paragraph>
+  </div>
+  <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+    <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+
+      {{ loop from="1" to="3" }}
+      <div class="flex flex-col">
+
+        <x-paragraph as="dt" class="flex items-center gap-x-3" weight="semibold">
+          {{ svg src="20/solid/cloud-arrow-up" class="size-5 flex-none text-indigo-600" }}
+          Push to deploy
+        </x-paragraph>
+        <x-paragraph as="dd" class="mt-4" color="gray">
+          Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus.
+          Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.
+          <p class="mt-6">
+            <a href="#" class="text-sm/6 font-semibold text-indigo-600">Learn more <span aria-hidden="true">→</span></a>
+          </p>
+        </x-paragraph>
+
+      </div>
+      {{ /loop }}
+
+    </dl>
+  </div>
+</div>
+{{ /partial:sets/block }}

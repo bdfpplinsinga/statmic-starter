@@ -1,0 +1,12 @@
+{{ partial:sets/block }}
+    <div class="px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+            <x-heading class="tracking-tight text-balance" size="lg">{{ title }}</x-heading>
+            <x-paragraph as="div" class="mt-6 mx-auto max-w-xl text-pretty " size="lg" color="gray">{{ rich_text }}
+            </x-paragraph>
+            {{ if buttons }}
+                 {{ partial:components/buttons class="justify-center" }} 
+            {{ /if }}
+        </div>
+    </div>
+{{ /partial:sets/block }}

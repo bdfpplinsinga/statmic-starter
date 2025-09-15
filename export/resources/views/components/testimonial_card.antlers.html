@@ -1,0 +1,38 @@
+{{ if variant == "default" }}
+
+<div class="flex flex-col">
+    {{partial:components/picture :image="company_image" class="h-12 self-start" alt="Testimonial logo" }}
+    <figure class="mt-10 flex flex-auto flex-col justify-between">
+        <x-paragraph as="blockquote" size="lg">
+            {{rich_text}}
+        </x-paragraph>
+        <figcaption class="mt-10 flex items-center gap-x-6">
+            {{partial:components/picture :image="image" class="size-14 rounded-full bg-gray-50" alt="Testimonial Avatar" }}
+            <div class="text-base">
+                <x-paragraph weight="semibold">{{ full_name }}</x-paragraph>
+                <x-paragraph color="gray">{{ position }}</x-paragraph>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+{{ else }}
+
+<div class="relative overflow-hidden bg-gray-900 px-6 py-20 shadow-xl rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
+    {{partial:components/picture :image="image" cover="true" class="absolute inset-0 size-full object-cover brightness-150 saturate-0" alt="Testimonial"}}
+    <div class="absolute inset-0 bg-gray-900/90 mix-blend-multiply"></div>
+    <div class="relative mx-auto max-w-2xl lg:mx-0">
+    {{partial:components/picture :image="company_image" class="h-12 w-auto" alt="Testimonial"}}
+    <figure>
+        <x-paragraph as="blockquote" size="xl" weight="semibold" color="white" class="mt-6">
+        {{rich_text}}
+        </x-paragraph>
+        <figcaption class="mt-6">
+            <x-paragraph weight="semibold" color="white">{{ full_name }}</x-paragraph>
+            <x-paragraph color="white">{{ position }}</x-paragraph>
+        </figcaption>
+    </figure>
+    </div>
+</div>
+
+{{/if }}
